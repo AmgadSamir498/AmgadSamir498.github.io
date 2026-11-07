@@ -653,6 +653,51 @@
       text-align: left;
     }
 
+    .connect-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 250px;
+      gap: clamp(32px, 5vw, 64px);
+      align-items: center;
+    }
+    .connect-copy { min-width: 0; }
+
+    .qr-card {
+      width: 250px;
+      justify-self: end;
+      padding: 12px;
+      border: 1px solid rgba(232, 180, 90, 0.3);
+      border-radius: 24px;
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+      text-align: center;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .qr-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(232, 180, 90, 0.55);
+      box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.8);
+    }
+    .qr-frame {
+      padding: 10px;
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.6);
+    }
+    .qr-frame img { width: 100%; height: auto; border-radius: 6px; }
+    .qr-title {
+      margin: 14px 0 3px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+    .qr-sub {
+      margin: 0;
+      font-family: "IBM Plex Sans Arabic", sans-serif;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
     .connect-email {
       display: inline-flex;
       align-items: center;
@@ -784,6 +829,12 @@
       .link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
+    @media (max-width: 860px) {
+      .connect-top { grid-template-columns: 1fr; gap: 30px; }
+      .qr-card { justify-self: start; width: 230px; }
+      .connect-email { margin-bottom: 28px; }
+    }
+
     @media (max-width: 720px) {
       .header-inner { padding: 14px 20px; }
       .nav { gap: 18px; }
@@ -801,7 +852,7 @@
       .arabic-panel::before { font-size: 190px; }
       .connect-card { padding: 32px 20px; border-radius: 28px; }
       .link-grid { grid-template-columns: 1fr; }
-      .connect-email { margin-bottom: 34px; }
+      .connect-email { margin-bottom: 28px; }
       .site-footer { flex-direction: column; align-items: flex-start; }
     }
 
@@ -1025,19 +1076,31 @@
     <!-- Connect -->
     <section class="section" id="connect" aria-labelledby="connect-title">
       <div class="connect-card reveal">
-        <p class="kicker">03 — Connect</p>
-        <h2 id="connect-title">Let's make something<br>worth watching.</h2>
-        <p class="connect-lead">
-          For collaborations, media features, and live performances — my inbox is always open.
-        </p>
-        <p class="connect-lead-ar" lang="ar" dir="rtl">للتعاون والإعلانات والحفلات، تواصل معي.</p>
+        <div class="connect-top">
+          <div class="connect-copy">
+            <p class="kicker">03 — Connect</p>
+            <h2 id="connect-title">Let's make something<br>worth watching.</h2>
+            <p class="connect-lead">
+              For collaborations, media features, and live performances — my inbox is always open.
+            </p>
+            <p class="connect-lead-ar" lang="ar" dir="rtl">للتعاون والإعلانات والحفلات، تواصل معي.</p>
 
-        <a class="connect-email" href="mailto:amgadsamir498@gmail.com">
-          amgadsamir498@gmail.com
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-            <path d="M7 17 17 7M8 7h9v9"/>
-          </svg>
-        </a>
+            <a class="connect-email" href="mailto:amgadsamir498@gmail.com">
+              amgadsamir498@gmail.com
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M7 17 17 7M8 7h9v9"/>
+              </svg>
+            </a>
+          </div>
+
+          <aside class="qr-card" aria-label="QR code to Amgad's website">
+            <div class="qr-frame">
+              <img src="assets/qr-website.png" alt="QR code that opens Amgad Samir's website" width="588" height="588" loading="lazy">
+            </div>
+            <p class="qr-title">Scan to visit my website</p>
+            <p class="qr-sub" lang="ar" dir="rtl">امسح الرمز لزيارة موقعي</p>
+          </aside>
+        </div>
 
         <div class="link-grid">
           <a class="link-card" href="https://www.facebook.com/share/1CBu75rGys/" target="_blank" rel="noopener noreferrer">

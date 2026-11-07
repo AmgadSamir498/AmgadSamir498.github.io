@@ -10,6 +10,7 @@ pianist, and content creator. Built as a single static HTML page and published w
 - `index.html` — the entire page (content + styles + a small amount of JavaScript)
 - `assets/amgad-portrait.jpg` — hero portrait
 - `assets/og.jpg` — social sharing image (1200 × 630)
+- `assets/qr-website.png` — QR code in the Connect section (opens the previous website)
 - `assets/favicon.svg` — browser icon
 - `assets/apple-touch-icon.png` — iOS home-screen icon
 - `404.html` — custom not-found page
